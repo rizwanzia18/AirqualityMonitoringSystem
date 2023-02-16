@@ -1,0 +1,462 @@
+2023-02-16 00:45:24,223 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Starting AirQualityMonitoringSystemApplication using Java 17.0.5 with PID 7464 (C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem\target\classes started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 00:45:24,229 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 00:45:25,358 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat initialized with port(s): 8080 (http)
+2023-02-16 00:45:25,371 [INFO] org.apache.catalina.core.StandardService {main} Starting service [Tomcat]
+2023-02-16 00:45:25,371 [INFO] org.apache.catalina.core.StandardEngine {main} Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-16 00:45:25,492 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {main} Initializing Spring embedded WebApplicationContext
+2023-02-16 00:45:25,492 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {main} Root WebApplicationContext: initialization completed in 1204 ms
+2023-02-16 00:45:26,348 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 00:45:26,358 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Started AirQualityMonitoringSystemApplication in 2.645 seconds (process running for 3.448)
+2023-02-16 00:45:41,584 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8080-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 00:45:41,586 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Initializing Servlet 'dispatcherServlet'
+2023-02-16 00:45:41,586 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Completed initialization in 0 ms
+2023-02-16 00:45:41,617 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Inside the method of getting the all data
+2023-02-16 00:45:42,156 [ERROR] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] {http-nio-8080-exec-1} Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException: Requested resource not found (Service: AmazonDynamoDBv2; Status Code: 400; Error Code: ResourceNotFoundException; Request ID: VPJ0PCU31R4VAHOKCMPHIE20VVVV4KQNSO5AEMVJF66Q9ASUAAJG; Proxy: null)] with root cause
+com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException: Requested resource not found (Service: AmazonDynamoDBv2; Status Code: 400; Error Code: ResourceNotFoundException; Request ID: VPJ0PCU31R4VAHOKCMPHIE20VVVV4KQNSO5AEMVJF66Q9ASUAAJG; Proxy: null)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleErrorResponse(AmazonHttpClient.java:1862)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleServiceErrorResponse(AmazonHttpClient.java:1415)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1384)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1154)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:811)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:779)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:753)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:713)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:695)
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:559)
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:539)
+	at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.doInvoke(AmazonDynamoDBClient.java:6214)
+	at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.invoke(AmazonDynamoDBClient.java:6181)
+	at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.executeScan(AmazonDynamoDBClient.java:4327)
+	at com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient.scan(AmazonDynamoDBClient.java:4291)
+	at com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.scan(DynamoDBMapper.java:1570)
+	at com.amazonaws.services.dynamodbv2.datamodeling.AbstractDynamoDBMapper.scan(AbstractDynamoDBMapper.java:236)
+	at com.aqms.repo.AirQualityRepository.getAllData(AirQualityRepository.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.aqms.repo.AirQualityRepository$$SpringCGLIB$$0.getAllData(<generated>)
+	at com.aqms.controller.AqmsController.getAllData(AqmsController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:705)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-02-16 00:47:00,468 [INFO] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin {RMI TCP Connection(11)-127.0.0.1} Application shutdown requested.
+2023-02-16 00:47:00,476 [INFO] org.apache.catalina.core.StandardService {RMI TCP Connection(11)-127.0.0.1} Stopping service [Tomcat]
+2023-02-16 00:47:00,478 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {RMI TCP Connection(11)-127.0.0.1} Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-16 00:47:02,500 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Starting AirQualityMonitoringSystemApplication using Java 17.0.5 with PID 6180 (C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem\target\classes started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 00:47:02,503 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 00:47:03,448 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat initialized with port(s): 8080 (http)
+2023-02-16 00:47:03,458 [INFO] org.apache.catalina.core.StandardService {main} Starting service [Tomcat]
+2023-02-16 00:47:03,459 [INFO] org.apache.catalina.core.StandardEngine {main} Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-16 00:47:03,570 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {main} Initializing Spring embedded WebApplicationContext
+2023-02-16 00:47:03,570 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {main} Root WebApplicationContext: initialization completed in 1018 ms
+2023-02-16 00:47:04,342 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 00:47:04,351 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Started AirQualityMonitoringSystemApplication in 2.286 seconds (process running for 2.997)
+2023-02-16 00:47:13,388 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8080-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 00:47:13,388 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Initializing Servlet 'dispatcherServlet'
+2023-02-16 00:47:13,389 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Completed initialization in 1 ms
+2023-02-16 00:47:13,416 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Inside the method of getting the all data
+2023-02-16 00:47:13,918 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Got the data from the repository
+2023-02-16 00:47:13,918 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Data from the repo is not null
+2023-02-16 00:51:27,380 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Inside the method of getting the all data
+2023-02-16 00:51:27,624 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Got the data from the repository
+2023-02-16 00:51:27,624 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Data from the repo is not null
+2023-02-16 00:54:04,012 [INFO] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin {RMI TCP Connection(15)-127.0.0.1} Application shutdown requested.
+2023-02-16 00:54:04,021 [INFO] org.apache.catalina.core.StandardService {RMI TCP Connection(15)-127.0.0.1} Stopping service [Tomcat]
+2023-02-16 00:54:04,023 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {RMI TCP Connection(15)-127.0.0.1} Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-16 00:54:06,076 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Starting AirQualityMonitoringSystemApplication using Java 17.0.5 with PID 4972 (C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem\target\classes started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 00:54:06,078 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 00:54:07,009 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat initialized with port(s): 8080 (http)
+2023-02-16 00:54:07,019 [INFO] org.apache.catalina.core.StandardService {main} Starting service [Tomcat]
+2023-02-16 00:54:07,020 [INFO] org.apache.catalina.core.StandardEngine {main} Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-16 00:54:07,131 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {main} Initializing Spring embedded WebApplicationContext
+2023-02-16 00:54:07,131 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {main} Root WebApplicationContext: initialization completed in 1004 ms
+2023-02-16 00:54:07,894 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 00:54:07,903 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Started AirQualityMonitoringSystemApplication in 2.271 seconds (process running for 2.961)
+2023-02-16 00:54:12,021 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8080-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 00:54:12,021 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Initializing Servlet 'dispatcherServlet'
+2023-02-16 00:54:12,023 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Completed initialization in 1 ms
+2023-02-16 00:54:12,054 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Inside the method of getting the all data
+2023-02-16 00:54:12,598 [ERROR] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] {http-nio-8080-exec-1} Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMappingException: AqmsEntity; no mapping for HASH key] with root cause
+com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMappingException: AqmsEntity; no mapping for HASH key
+	at com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperTableModel.hashKey(DynamoDBMapperTableModel.java:119)
+	at com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperTableModel$Builder.build(DynamoDBMapperTableModel.java:449)
+	at com.amazonaws.services.dynamodbv2.datamodeling.StandardModelFactories$StandardTableFactory.getTable(StandardModelFactories.java:107)
+	at com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.getTableModel(DynamoDBMapper.java:409)
+	at com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.toParameters(DynamoDBMapper.java:2074)
+	at com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.toParameters(DynamoDBMapper.java:2063)
+	at com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.toParameters(DynamoDBMapper.java:2095)
+	at com.amazonaws.services.dynamodbv2.datamodeling.PaginatedScanList.<init>(PaginatedScanList.java:65)
+	at com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.scan(DynamoDBMapper.java:1571)
+	at com.amazonaws.services.dynamodbv2.datamodeling.AbstractDynamoDBMapper.scan(AbstractDynamoDBMapper.java:236)
+	at com.aqms.repo.AirQualityRepository.getAllData(AirQualityRepository.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.aqms.repo.AirQualityRepository$$SpringCGLIB$$0.getAllData(<generated>)
+	at com.aqms.controller.AqmsController.getAllData(AqmsController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:705)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-02-16 00:55:58,670 [INFO] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin {RMI TCP Connection(9)-127.0.0.1} Application shutdown requested.
+2023-02-16 00:55:58,679 [INFO] org.apache.catalina.core.StandardService {RMI TCP Connection(9)-127.0.0.1} Stopping service [Tomcat]
+2023-02-16 00:55:58,680 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {RMI TCP Connection(9)-127.0.0.1} Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-16 00:56:00,696 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Starting AirQualityMonitoringSystemApplication using Java 17.0.5 with PID 656 (C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem\target\classes started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 00:56:00,699 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 00:56:01,617 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat initialized with port(s): 8080 (http)
+2023-02-16 00:56:01,627 [INFO] org.apache.catalina.core.StandardService {main} Starting service [Tomcat]
+2023-02-16 00:56:01,628 [INFO] org.apache.catalina.core.StandardEngine {main} Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-16 00:56:01,736 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {main} Initializing Spring embedded WebApplicationContext
+2023-02-16 00:56:01,737 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {main} Root WebApplicationContext: initialization completed in 990 ms
+2023-02-16 00:56:02,496 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 00:56:02,505 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Started AirQualityMonitoringSystemApplication in 2.248 seconds (process running for 2.967)
+2023-02-16 00:56:10,136 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8080-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 00:56:10,136 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Initializing Servlet 'dispatcherServlet'
+2023-02-16 00:56:10,137 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Completed initialization in 1 ms
+2023-02-16 00:56:10,163 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Inside the method of getting the all data
+2023-02-16 00:56:10,675 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Got the data from the repository
+2023-02-16 00:56:10,675 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Data from the repo is not null
+2023-02-16 00:57:35,135 [INFO] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin {RMI TCP Connection(11)-127.0.0.1} Application shutdown requested.
+2023-02-16 00:57:35,143 [INFO] org.apache.catalina.core.StandardService {RMI TCP Connection(11)-127.0.0.1} Stopping service [Tomcat]
+2023-02-16 00:57:35,145 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {RMI TCP Connection(11)-127.0.0.1} Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-16 00:57:37,213 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Starting AirQualityMonitoringSystemApplication using Java 17.0.5 with PID 13272 (C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem\target\classes started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 00:57:37,216 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 00:57:38,147 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat initialized with port(s): 8080 (http)
+2023-02-16 00:57:38,157 [INFO] org.apache.catalina.core.StandardService {main} Starting service [Tomcat]
+2023-02-16 00:57:38,158 [INFO] org.apache.catalina.core.StandardEngine {main} Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-16 00:57:38,268 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {main} Initializing Spring embedded WebApplicationContext
+2023-02-16 00:57:38,269 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {main} Root WebApplicationContext: initialization completed in 1001 ms
+2023-02-16 00:57:39,027 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 00:57:39,036 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Started AirQualityMonitoringSystemApplication in 2.266 seconds (process running for 2.97)
+2023-02-16 00:59:05,370 [INFO] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin {RMI TCP Connection(11)-127.0.0.1} Application shutdown requested.
+2023-02-16 00:59:05,381 [INFO] org.apache.catalina.core.StandardService {RMI TCP Connection(11)-127.0.0.1} Stopping service [Tomcat]
+2023-02-16 00:59:07,389 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Starting AirQualityMonitoringSystemApplication using Java 17.0.5 with PID 484 (C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem\target\classes started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 00:59:07,392 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 00:59:08,343 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat initialized with port(s): 8080 (http)
+2023-02-16 00:59:08,353 [INFO] org.apache.catalina.core.StandardService {main} Starting service [Tomcat]
+2023-02-16 00:59:08,353 [INFO] org.apache.catalina.core.StandardEngine {main} Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-16 00:59:08,462 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {main} Initializing Spring embedded WebApplicationContext
+2023-02-16 00:59:08,462 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {main} Root WebApplicationContext: initialization completed in 1020 ms
+2023-02-16 00:59:09,226 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 00:59:09,235 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Started AirQualityMonitoringSystemApplication in 2.298 seconds (process running for 3.005)
+2023-02-16 00:59:18,353 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8080-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 00:59:18,353 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Initializing Servlet 'dispatcherServlet'
+2023-02-16 00:59:18,354 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Completed initialization in 0 ms
+2023-02-16 00:59:18,382 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Inside the method of getting the all data
+2023-02-16 00:59:18,893 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Got the data from the repository
+2023-02-16 00:59:18,893 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Data from the repo is not null
+2023-02-16 00:59:21,786 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Inside the method of getting the all data
+2023-02-16 00:59:21,812 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Got the data from the repository
+2023-02-16 00:59:21,813 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Data from the repo is not null
+2023-02-16 00:59:22,686 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Inside the method of getting the all data
+2023-02-16 00:59:22,714 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Got the data from the repository
+2023-02-16 00:59:22,715 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Data from the repo is not null
+2023-02-16 00:59:23,321 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Inside the method of getting the all data
+2023-02-16 00:59:23,348 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Got the data from the repository
+2023-02-16 00:59:23,348 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Data from the repo is not null
+2023-02-16 00:59:23,934 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Inside the method of getting the all data
+2023-02-16 00:59:23,959 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Got the data from the repository
+2023-02-16 00:59:23,959 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Data from the repo is not null
+2023-02-16 00:59:24,112 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-6} Inside the method of getting the all data
+2023-02-16 00:59:24,141 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-6} Got the data from the repository
+2023-02-16 00:59:24,141 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-6} Data from the repo is not null
+2023-02-16 00:59:24,251 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-7} Inside the method of getting the all data
+2023-02-16 00:59:24,276 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-7} Got the data from the repository
+2023-02-16 00:59:24,277 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-7} Data from the repo is not null
+2023-02-16 00:59:24,402 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Inside the method of getting the all data
+2023-02-16 00:59:24,428 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Got the data from the repository
+2023-02-16 00:59:24,428 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Data from the repo is not null
+2023-02-16 01:00:51,703 [INFO] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin {RMI TCP Connection(10)-127.0.0.1} Application shutdown requested.
+2023-02-16 01:00:51,711 [INFO] org.apache.catalina.core.StandardService {RMI TCP Connection(10)-127.0.0.1} Stopping service [Tomcat]
+2023-02-16 01:00:51,712 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {RMI TCP Connection(10)-127.0.0.1} Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-16 01:00:53,553 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Starting AirQualityMonitoringSystemApplication using Java 17.0.5 with PID 5364 (C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem\target\classes started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 01:00:53,555 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 01:00:54,475 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat initialized with port(s): 8080 (http)
+2023-02-16 01:00:54,485 [INFO] org.apache.catalina.core.StandardService {main} Starting service [Tomcat]
+2023-02-16 01:00:54,485 [INFO] org.apache.catalina.core.StandardEngine {main} Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-16 01:00:54,594 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {main} Initializing Spring embedded WebApplicationContext
+2023-02-16 01:00:54,595 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {main} Root WebApplicationContext: initialization completed in 989 ms
+2023-02-16 01:00:55,349 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 01:00:55,358 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Started AirQualityMonitoringSystemApplication in 2.245 seconds (process running for 2.933)
+2023-02-16 01:01:03,284 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8080-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 01:01:03,284 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Initializing Servlet 'dispatcherServlet'
+2023-02-16 01:01:03,285 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Completed initialization in 0 ms
+2023-02-16 01:01:03,313 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Inside the method of getting the all data
+2023-02-16 01:01:03,812 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Got the data from the repository
+2023-02-16 01:01:03,812 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Data from the repo is not null
+2023-02-16 01:03:14,394 [INFO] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin {RMI TCP Connection(12)-127.0.0.1} Application shutdown requested.
+2023-02-16 01:03:14,402 [INFO] org.apache.catalina.core.StandardService {RMI TCP Connection(12)-127.0.0.1} Stopping service [Tomcat]
+2023-02-16 01:03:14,404 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {RMI TCP Connection(12)-127.0.0.1} Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-16 13:58:26,977 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Starting AirQualityMonitoringSystemApplication using Java 17.0.5 with PID 6956 (C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem\target\classes started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 13:58:26,980 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 13:58:28,180 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat initialized with port(s): 8080 (http)
+2023-02-16 13:58:28,193 [INFO] org.apache.catalina.core.StandardService {main} Starting service [Tomcat]
+2023-02-16 13:58:28,193 [INFO] org.apache.catalina.core.StandardEngine {main} Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-16 13:58:28,321 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {main} Initializing Spring embedded WebApplicationContext
+2023-02-16 13:58:28,322 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {main} Root WebApplicationContext: initialization completed in 1278 ms
+2023-02-16 13:58:29,204 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 13:58:29,213 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Started AirQualityMonitoringSystemApplication in 2.742 seconds (process running for 3.564)
+2023-02-16 13:58:35,327 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8080-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 13:58:35,327 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Initializing Servlet 'dispatcherServlet'
+2023-02-16 13:58:35,328 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Completed initialization in 0 ms
+2023-02-16 13:58:35,359 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Inside the method of getting the all data
+2023-02-16 13:58:35,907 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Got the data from the repository
+2023-02-16 13:58:35,907 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Data from the repo is not null
+2023-02-16 14:06:27,231 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Inside the method of getting the all data
+2023-02-16 14:06:27,705 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Got the data from the repository
+2023-02-16 14:06:27,705 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Data from the repo is not null
+2023-02-16 14:06:27,723 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Inside the method of getting the all data
+2023-02-16 14:06:27,801 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Got the data from the repository
+2023-02-16 14:06:27,803 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Data from the repo is not null
+2023-02-16 14:09:06,620 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Inside the method of getting the all data
+2023-02-16 14:09:07,108 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Got the data from the repository
+2023-02-16 14:09:07,111 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Data from the repo is not null
+2023-02-16 14:09:33,985 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-9} Inside the method of getting the all data
+2023-02-16 14:09:34,065 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-9} Got the data from the repository
+2023-02-16 14:09:34,067 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-9} Data from the repo is not null
+2023-02-16 14:17:45,210 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Inside the method of getting the all data
+2023-02-16 14:17:45,497 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Got the data from the repository
+2023-02-16 14:17:45,497 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Data from the repo is not null
+2023-02-16 14:14:49,168 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Inside the method of getting the all data
+2023-02-16 14:14:49,511 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Got the data from the repository
+2023-02-16 14:14:49,511 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Data from the repo is not null
+2023-02-16 14:14:49,515 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Inside the method of getting the all data
+2023-02-16 14:14:49,564 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Got the data from the repository
+2023-02-16 14:14:49,564 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Data from the repo is not null
+2023-02-16 14:22:57,745 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-6} Inside the method of getting the all data
+2023-02-16 14:22:58,051 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-6} Got the data from the repository
+2023-02-16 14:22:58,052 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-6} Data from the repo is not null
+2023-02-16 14:53:36,997 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Inside the method of getting the all data
+2023-02-16 14:53:37,311 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Got the data from the repository
+2023-02-16 14:53:37,311 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Data from the repo is not null
+2023-02-16 14:54:43,838 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-10} Inside the method of getting the all data
+2023-02-16 14:54:44,150 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-10} Got the data from the repository
+2023-02-16 14:54:44,150 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-10} Data from the repo is not null
+2023-02-16 14:59:49,735 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Inside the method of getting the all data
+2023-02-16 14:59:50,159 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Got the data from the repository
+2023-02-16 14:59:50,160 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Data from the repo is not null
+2023-02-16 15:01:45,768 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Inside the method of getting the all data
+2023-02-16 15:01:46,193 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Got the data from the repository
+2023-02-16 15:01:46,193 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Data from the repo is not null
+2023-02-16 15:01:46,197 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Inside the method of getting the all data
+2023-02-16 15:01:46,275 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Got the data from the repository
+2023-02-16 15:01:46,275 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Data from the repo is not null
+2023-02-16 15:03:04,464 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-7} Inside the method of getting the all data
+2023-02-16 15:03:04,814 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-7} Got the data from the repository
+2023-02-16 15:03:04,814 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-7} Data from the repo is not null
+2023-02-16 15:04:48,487 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-9} Inside the method of getting the all data
+2023-02-16 15:04:48,996 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-9} Got the data from the repository
+2023-02-16 15:04:48,997 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-9} Data from the repo is not null
+2023-02-16 15:08:19,985 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Inside the method of getting the all data
+2023-02-16 15:08:20,411 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Got the data from the repository
+2023-02-16 15:08:20,411 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Data from the repo is not null
+2023-02-16 15:08:57,451 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Inside the method of getting the all data
+2023-02-16 15:08:57,517 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Got the data from the repository
+2023-02-16 15:08:57,518 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Data from the repo is not null
+2023-02-16 15:08:57,521 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Inside the method of getting the all data
+2023-02-16 15:08:57,589 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Got the data from the repository
+2023-02-16 15:08:57,590 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Data from the repo is not null
+2023-02-16 15:12:27,316 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Inside the method of getting the all data
+2023-02-16 15:12:27,746 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Got the data from the repository
+2023-02-16 15:12:27,746 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Data from the repo is not null
+2023-02-16 15:43:48,795 [INFO] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin {RMI TCP Connection(113)-127.0.0.1} Application shutdown requested.
+2023-02-16 15:43:48,806 [INFO] org.apache.catalina.core.StandardService {RMI TCP Connection(113)-127.0.0.1} Stopping service [Tomcat]
+2023-02-16 15:43:48,808 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {RMI TCP Connection(113)-127.0.0.1} Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-16 16:20:32,609 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Starting AirQualityMonitoringSystemApplication using Java 17.0.5 with PID 14120 (C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem\target\classes started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 16:20:32,611 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 16:20:33,582 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat initialized with port(s): 8080 (http)
+2023-02-16 16:20:33,593 [INFO] org.apache.catalina.core.StandardService {main} Starting service [Tomcat]
+2023-02-16 16:20:33,594 [INFO] org.apache.catalina.core.StandardEngine {main} Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-16 16:20:33,727 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {main} Initializing Spring embedded WebApplicationContext
+2023-02-16 16:20:33,727 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {main} Root WebApplicationContext: initialization completed in 1063 ms
+2023-02-16 16:20:34,535 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {main} Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 16:20:34,544 [INFO] com.aqms.AirQualityMonitoringSystemApplication {main} Started AirQualityMonitoringSystemApplication in 2.412 seconds (process running for 3.371)
+2023-02-16 16:22:26,112 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8080-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 16:22:26,113 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Initializing Servlet 'dispatcherServlet'
+2023-02-16 16:22:26,114 [INFO] org.springframework.web.servlet.DispatcherServlet {http-nio-8080-exec-1} Completed initialization in 0 ms
+2023-02-16 16:22:26,153 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Inside the method of getting the all data
+2023-02-16 16:22:26,155 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-1} Repository method fetching from Dynamodb
+2023-02-16 16:22:27,971 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Got the data from the repository
+2023-02-16 16:22:27,972 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Data from the repo is not null
+2023-02-16 16:22:28,010 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Inside the method of getting the all data
+2023-02-16 16:22:28,011 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-2} Repository method fetching from Dynamodb
+2023-02-16 16:22:28,293 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Got the data from the repository
+2023-02-16 16:22:28,293 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-2} Data from the repo is not null
+2023-02-16 16:22:28,857 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Inside the method of getting the all data
+2023-02-16 16:22:28,857 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-3} Repository method fetching from Dynamodb
+2023-02-16 16:22:28,915 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Got the data from the repository
+2023-02-16 16:22:28,915 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Data from the repo is not null
+2023-02-16 16:22:29,756 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Inside the method of getting the all data
+2023-02-16 16:22:29,756 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-4} Repository method fetching from Dynamodb
+2023-02-16 16:22:29,803 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Got the data from the repository
+2023-02-16 16:22:29,803 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Data from the repo is not null
+2023-02-16 16:22:30,948 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Inside the method of getting the all data
+2023-02-16 16:22:30,949 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-5} Repository method fetching from Dynamodb
+2023-02-16 16:22:30,992 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Got the data from the repository
+2023-02-16 16:22:30,992 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-5} Data from the repo is not null
+2023-02-16 16:36:17,742 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-10} Inside the method of getting the all data
+2023-02-16 16:36:17,742 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-10} Repository method fetching from Dynamodb
+2023-02-16 16:36:18,034 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-10} Got the data from the repository
+2023-02-16 16:36:18,034 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-10} Data from the repo is not null
+2023-02-16 16:36:18,038 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Inside the method of getting the all data
+2023-02-16 16:36:18,039 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-1} Repository method fetching from Dynamodb
+2023-02-16 16:36:18,082 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Got the data from the repository
+2023-02-16 16:36:18,082 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-1} Data from the repo is not null
+2023-02-16 17:32:45,314 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Inside the method of getting the all data
+2023-02-16 17:32:45,315 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-3} Repository method fetching from Dynamodb
+2023-02-16 17:32:45,590 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Got the data from the repository
+2023-02-16 17:32:45,590 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-3} Data from the repo is not null
+2023-02-16 17:32:45,595 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Inside the method of getting the all data
+2023-02-16 17:32:45,595 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-4} Repository method fetching from Dynamodb
+2023-02-16 17:32:45,629 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Got the data from the repository
+2023-02-16 17:32:45,629 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-4} Data from the repo is not null
+2023-02-16 17:56:02,759 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-6} Inside the method of getting the all data
+2023-02-16 17:56:02,760 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-6} Repository method fetching from Dynamodb
+2023-02-16 17:56:03,019 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-6} Got the data from the repository
+2023-02-16 17:56:03,020 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-6} Data from the repo is not null
+2023-02-16 18:04:47,606 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Inside the method of getting the all data
+2023-02-16 18:04:47,607 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-8} Repository method fetching from Dynamodb
+2023-02-16 18:04:47,892 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Got the data from the repository
+2023-02-16 18:04:47,892 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-8} Data from the repo is not null
+2023-02-16 18:04:47,896 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-9} Inside the method of getting the all data
+2023-02-16 18:04:47,897 [INFO] com.aqms.repo.AirQualityRepository {http-nio-8080-exec-9} Repository method fetching from Dynamodb
+2023-02-16 18:04:47,940 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-9} Got the data from the repository
+2023-02-16 18:04:47,940 [INFO] com.aqms.controller.AqmsController {http-nio-8080-exec-9} Data from the repo is not null
+2023-02-16 20:04:20,655 [INFO] com.aqms.unittest.get.AqmsTests {main} Starting AqmsTests using Java 17.0.5 with PID 352 (started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 20:04:20,657 [INFO] com.aqms.unittest.get.AqmsTests {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 20:04:21,268 [INFO] com.aqms.unittest.get.AqmsTests {main} Started AqmsTests in 1.152 seconds (process running for 2.579)
+2023-02-16 20:04:22,104 [INFO] com.aqms.unittest.get.AqmsTests {main} Inside the first test method to check all data displayed
+2023-02-16 20:04:22,131 [INFO] com.aqms.controller.AqmsController {main} Inside the method of getting the all data
+2023-02-16 20:04:22,135 [INFO] com.aqms.controller.AqmsController {main} Got the data from the repository
+2023-02-16 20:04:22,135 [INFO] com.aqms.controller.AqmsController {main} Data from the repo is not null
+2023-02-16 20:04:22,161 [INFO] com.aqms.unittest.get.AqmsTests {main} Inside the Second test method to check null data handled
+2023-02-16 20:04:22,162 [INFO] com.aqms.controller.AqmsController {main} Inside the method of getting the all data
+2023-02-16 20:04:22,163 [INFO] com.aqms.controller.AqmsController {main} Got the data from the repository
+2023-02-16 20:04:22,163 [INFO] com.aqms.controller.AqmsController {main} There is no data in the repo
+2023-02-16 20:04:22,163 [INFO] com.aqms.controller.AqmsController {main} Exception is handled
+2023-02-16 20:05:47,117 [INFO] com.aqms.unittest.get.AirQualityMonitoringSystemApplicationTests {main} Starting AirQualityMonitoringSystemApplicationTests using Java 17.0.5 with PID 11748 (started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 20:05:47,118 [INFO] com.aqms.unittest.get.AirQualityMonitoringSystemApplicationTests {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 20:05:49,701 [INFO] com.aqms.unittest.get.AirQualityMonitoringSystemApplicationTests {main} Started AirQualityMonitoringSystemApplicationTests in 3.01 seconds (process running for 4.357)
+2023-02-16 20:05:50,341 [INFO] com.aqms.unittest.get.AqmsTests {main} Starting AqmsTests using Java 17.0.5 with PID 11748 (started by cogjava4401 in C:\Users\cogjava4401\Desktop\AirQualityMonitoringSystem)
+2023-02-16 20:05:50,342 [INFO] com.aqms.unittest.get.AqmsTests {main} No active profile set, falling back to 1 default profile: "default"
+2023-02-16 20:05:50,355 [INFO] com.aqms.unittest.get.AqmsTests {main} Started AqmsTests in 0.046 seconds (process running for 5.011)
+2023-02-16 20:05:50,487 [INFO] com.aqms.unittest.get.AqmsTests {main} Inside the first test method to check all data displayed
+2023-02-16 20:05:50,516 [INFO] com.aqms.controller.AqmsController {main} Inside the method of getting the all data
+2023-02-16 20:05:50,519 [INFO] com.aqms.controller.AqmsController {main} Got the data from the repository
+2023-02-16 20:05:50,520 [INFO] com.aqms.controller.AqmsController {main} Data from the repo is not null
+2023-02-16 20:05:50,532 [INFO] com.aqms.unittest.get.AqmsTests {main} Inside the Second test method to check null data handled
+2023-02-16 20:05:50,532 [INFO] com.aqms.controller.AqmsController {main} Inside the method of getting the all data
+2023-02-16 20:05:50,533 [INFO] com.aqms.controller.AqmsController {main} Got the data from the repository
+2023-02-16 20:05:50,540 [INFO] com.aqms.controller.AqmsController {main} There is no data in the repo
+2023-02-16 20:05:50,541 [INFO] com.aqms.controller.AqmsController {main} Exception is handled
